@@ -1,8 +1,5 @@
 # Pruebas del circuito control de corriente
 
-![video control led mega](./imgs/test_control_led_mega_v1.mp4)
-[video control led mega](./imgs/test_control_led_mega_v1.mp4)
-
 ## Circuito original
 El circuito fue adaptado del diseño original de IORODEO.
 
@@ -12,7 +9,20 @@ El circuito fue adaptado del diseño original de IORODEO.
 EL circuito original original esta pensado en un microcontrolador de 3.3v por lo que requeria etapas para elevar la tensión de 3.3v a 5v. En ese sentido se optó por probar la tarjeta Arduino Mega que funciona a 5 v. 
 Una parte relevante del circuito es setear la tensión de referencia que servirá para controlar la corriente del led (0mA-16mA), para ello se requiere un DAC para cambiar la tensión de salida que servirá para cambiar la intensidad del LED. En ese sentido el arduino Mega no cuenta con un DAC nativo por lo que se uso la configuración de DAC delta-sigma que emula una DAC usando PWM, para ello adicionalmente se debe usar un filtro pasa bajos a la salida del PWM. El arduino MEga usó su Timer 1 con el pin 11 para generar el DAC delta-sigma.
 
+## Pruebas en simulación
+Se uso el softtware SimulIDE para la conexión del circuito.
+
 ![](./imgs/adaptacion_mega.png)
+
+### Partes del circuito
+
+![](./imgs/Captura%20de%20pantalla%202026-07-08%20104709.png)
+
+Control del led
+![](./imgs/Captura%20de%20pantalla%202026-07-08%20105521.png)
+
+DAC delta-sigma
+![](./imgs/Captura%20de%20pantalla%202026-07-08%20105537.png)
 
 EL código del Mega fue este:
 ```c++
@@ -65,3 +75,20 @@ void fijarVoltajeDAC(float voltios) {
   OCR1A = valorPWM; 
 }
 ```
+### Pruebas en implementación real del DAC delta-sigma
+Led 1v5
+![Led 1v5](./imgs/led_1v5.png)
+
+Led 3v2
+![Led 3v2](./imgs/led_3v2.png)
+
+Led 4v56
+![Led 4v56](./imgs/led_4v56.png)
+
+
+
+### Videos de prueba
+
+* [video control led mega](./imgs/test_control_led_mega_v1.mp4)
+* [video osciloscopio](./imgs/test_led_mega_v1.mp4)
+* [Video simulación](./imgs/simulide_test_led.mp4)
