@@ -75,6 +75,34 @@ void fijarVoltajeDAC(float voltios) {
   OCR1A = valorPWM; 
 }
 ```
+# Circuito implementado real
+
+![](./imgs/prueba_Real.jpeg)
+
+Se uso el LM324N como OPAMP principal, es un opamp que no es rail-to-rail, es decir no puede llegar ni a 0v  tampoco a 5v, se queda en valores muy cercanos a estos.
+
+![](./imgs/lm324n.png)
+![](./imgs/lm324n_pinout.png)
+
+### Filtrado
+se usaron para el filtro RC:
+- Resistencia: 120 ohms
+- Capacitor electrolítico:  100uf
+
+### Vset del OPAMP
+- R1: 3.3K ohm
+- R2: 1K ohm
+
+### Transistor BJT
+
+
+|BJT|PINOUT|
+|:---:|:---:|
+|2N2222|![](./imgs/2n2222.png)|
+
+
+
+
 ### Pruebas en implementación real del DAC delta-sigma
 Led 1v5
 ![Led 1v5](./imgs/led_1v5.png)
@@ -84,6 +112,8 @@ Led 3v2
 
 Led 4v56
 ![Led 4v56](./imgs/led_4v56.png)
+
+
 
 
 
