@@ -20,6 +20,7 @@ void setup() {
   display.setContrast(55); 
   delay(1000);
   display.clearDisplay();   // Borra el buffer interno
+  display.setRotation(2);
   display.display();        // Muestra la pantalla en blanco inicial
   delay(1000);
 }
@@ -35,15 +36,20 @@ void loop() {
   display.setCursor(0,0);
   display.println("FLUORIMETRO");
   
-  display.setCursor(0,10);
+  display.setCursor(0,8);
   display.print("Vset 2.00 V"); // Simulación del voltaje seteado [cite: 422]
   
-  display.setCursor(0,20);
+  display.setCursor(0,16);
   display.print("Iled: 6.25 mA"); // Simulación de la corriente calculada [cite: 376]
   
-  display.setCursor(0,30);
+  display.setCursor(0,24);
   display.print("Sens:AS7341 OK"); // Estado de tu nuevo sensor [cite: 547]
   
+  display.setCursor(0,32);
+  display.print("Moises Meza");
+
+  display.setCursor(0,40);
+  display.print("Moises Meza");
   // Enviamos los datos del buffer directamente a la pantalla física
   display.display();
   
