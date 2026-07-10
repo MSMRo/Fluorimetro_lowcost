@@ -2,9 +2,9 @@
 
 Las pruebas son:
 
-- 1_CORRIENTE_DELTA_SIGMA: Que es el circuito para implementar el control de corriente lineal del led por medio de una DAC delta-sigma que usa el pin 11 del arduino mega, pin que usa  PWM para simular una DAC. Se le agrega un filtro RC para pasar de PWM a valor analógico.
-- 2_DAC_LED_UNO_R4: Busca usar el DAC nativo del arduino uno R4 y aprovechar su puerto QWIIC nativo para usar el sensor de color.
-- 3_TEST_KICAD: Se creo una shield para arduino mega que incorpora una pantalla LCD NOKIA.
+- **1_CORRIENTE_DELTA_SIGMA**: Que es el circuito para implementar el control de corriente lineal del led por medio de una DAC delta-sigma que usa el pin 11 del arduino mega, pin que usa  PWM para simular una DAC. Se le agrega un filtro RC para pasar de PWM a valor analógico.
+- **2_DAC_LED_UNO_R4**: Busca usar el DAC nativo del arduino uno R4 y aprovechar su puerto QWIIC nativo para usar el sensor de color.
+- **3_TEST_KICAD**: Se creo una shield para arduino mega que incorpora una pantalla LCD NOKIA.
 
 ## Test LCD Nokia
 ![](./1_CORRIENTE_DELTA_SIGMA/imgs/LCD_nokia_real.jpeg)
