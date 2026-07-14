@@ -16,6 +16,13 @@ El AS7341 es un sensor espectral multicanal de alta precisión desarrollado por 
 La libreria para usar el AS7341 es ```Adafruit AS7341``` en el ide de arduino.
 
 ## 1_TEST_AS7341
+
+### firmware2
+Actualmente el firmware2 es el código funcional. Permite controlar el brillo del LED y la muestra de los maximos valores de los canales del sensor.
+![](./1_TEST_AS7341/imgs/DOC-20260714-WA0024.gif)
+
+
+### long_onda_oled
 Se desarrollo un código para mostrar los canales y su intensidad.
 
 ![](./1_TEST_AS7341/imgs/long_onda.png)
