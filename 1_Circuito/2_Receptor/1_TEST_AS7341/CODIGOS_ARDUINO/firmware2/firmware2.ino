@@ -22,7 +22,7 @@ struct Canal {
 
 //================== CONFIGURACIÓN LED Y ADC ==================
 const int pinDAC = 11;                // Pin 11 (Timer 1) para el LED en el Mega
-const int pinPotenciometro = A3;      // Pin de lectura analógica para el potenciómetro
+const int pinPotenciometro = A0;      // Pin de lectura analógica para el potenciómetro
 const int valorMaximoDigital = 1023;  // Resolución de 10 bits
 const float voltajeMaximoArduino = 5.0;
 
