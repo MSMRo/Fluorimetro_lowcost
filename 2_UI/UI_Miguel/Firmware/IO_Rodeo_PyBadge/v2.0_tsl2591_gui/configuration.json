@@ -1,0 +1,9 @@
+{
+  "startup"             : "Relative Units",
+  "gain_sensor_90"      : "max", 
+  "itime_sensor_90"     : "600ms",
+  "gain_sensor_180"     : "med", 
+  "itime_sensor_180"    : "300ms",
+  "ref_irradiance_180"  : 1000
+} 
+

@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "RASPBERRY_PI_PICO")(type "KiCad")(uri "/Users/miguelisidrobaez/Downloads/RASPBERRY_PI_PICO/RASPBERRY_PI_PICO.kicad_sym")(options "")(descr ""))
+)
