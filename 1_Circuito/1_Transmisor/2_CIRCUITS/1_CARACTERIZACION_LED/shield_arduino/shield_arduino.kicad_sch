@@ -4,6 +4,10 @@
 	(generator_version "10.0")
 	(uuid "340453a4-9490-42b4-93e6-040a0a66be79")
 	(paper "A4")
+	(title_block
+		(title "Proyecto fluorimetro")
+		(date "2026-08-31")
+	)
 	(lib_symbols
 		(symbol "Amplifier_Operational:LM358"
 			(pin_names
