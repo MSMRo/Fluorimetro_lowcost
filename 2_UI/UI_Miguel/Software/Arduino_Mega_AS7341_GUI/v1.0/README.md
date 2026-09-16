@@ -22,6 +22,16 @@ python app.py
 
 En macOS, el puerto suele aparecer como `/dev/cu.usbmodem*` o `/dev/cu.usbserial*`. Configura 115200 baudios y espera a que la GUI verifique el dispositivo antes de iniciar una captura.
 
+## Crear el ejecutable para Windows
+
+Desde `desktop_gui`, abre PowerShell y ejecuta:
+
+```powershell
+PowerShell -ExecutionPolicy Bypass -File .\build_windows.ps1
+```
+
+El ejecutable se crea en `desktop_gui\dist\Fluorimetro-AS7341.exe`. El logo se incluye dentro del ejecutable; las carpetas `sessions` y `records` se crean junto al `.exe` al usar la aplicación. El controlador USB del Arduino debe estar instalado en Windows.
+
 ## Pruebas
 
 Desde esta carpeta:

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import sys
 from datetime import datetime, timezone
 from math import ceil
 from pathlib import Path
@@ -46,6 +47,12 @@ GAINS = ("0.5x", "1x", "2x", "4x", "8x", "16x", "32x", "64x", "128x", "256x", "5
 INTEGRATION_TIMES = ("50ms", "100ms", "200ms", "300ms", "400ms", "600ms")
 
 
+def _default_data_root() -> Path:
+    if getattr(sys, "frozen", False):
+        return Path(sys.executable).resolve().parent
+    return Path(__file__).resolve().parents[1]
+
+
 class MainWindow(QMainWindow):
     def __init__(self, session_dir=None, records_dir=None) -> None:
         super().__init__()
@@ -53,8 +60,9 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("UPCH: AS7341 multicanal")
         self.setMinimumSize(980, 680)
         self.resize(1120, 820)
-        self.session_dir = Path(session_dir) if session_dir else Path(__file__).resolve().parents[1] / 'sessions' / (datetime.now().strftime('%Y%m%d_%H%M%S_') + uuid4().hex[:8])
-        self.records_dir = Path(records_dir) if records_dir else Path(__file__).resolve().parents[1] / 'records'
+        data_root = _default_data_root()
+        self.session_dir = Path(session_dir) if session_dir else data_root / 'sessions' / (datetime.now().strftime('%Y%m%d_%H%M%S_') + uuid4().hex[:8])
+        self.records_dir = Path(records_dir) if records_dir else data_root / 'records'
         self.exporter = CsvExporter(self.session_dir / 'telemetry.csv')
         self.telemetry_writer = TelemetryWriter(self.exporter, self)
         self.telemetry_writer.error_received.connect(self._handle_storage_error)
