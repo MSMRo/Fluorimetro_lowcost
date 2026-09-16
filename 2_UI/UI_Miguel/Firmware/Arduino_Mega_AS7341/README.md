@@ -2,6 +2,9 @@
 
 La versión actual está en [`v1.0/`](v1.0/). El sketch usa un Arduino Mega 2560, un AS7341 y una pantalla Nokia 5110. La salida D11 controla la iluminación externa mediante PWM.
 
+## Librerias
+Se recomienda instalar las librerias de arduino 
+
 ## Archivos principales
 
 - `v1.0/firmware/mega_as7341_multichannel/mega_as7341_multichannel.ino`: entrada del sketch para Arduino IDE.
